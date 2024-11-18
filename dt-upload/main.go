@@ -22,7 +22,7 @@ var bucketName string
 func init() {
 	// MinIO init
 	bucketName := os.Getenv("BUCKET_NAME")
-	endpoint := "sgp1.digitaloceanspaces.com"
+	endpoint := os.Getenv("ENDPOINT")
 	accessKeyID := os.Getenv("ACCESS_KEY")
 	secretAccessKey := os.Getenv("SECRET_KEY")
 	useSSL := true
