@@ -21,9 +21,10 @@ var bucketName string
 
 func init() {
 	// MinIO init
+	bucketName := os.Getenv("BUCKET_NAME")
 	endpoint := "sgp1.digitaloceanspaces.com"
-	accessKeyID := os.Getenv("SPACES_ACCESS_KEY")
-	secretAccessKey := os.Getenv("SPACES_SECRET_KEY")
+	accessKeyID := os.Getenv("ACCESS_KEY")
+	secretAccessKey := os.Getenv("SECRET_KEY")
 	useSSL := true
 
 	var err error
@@ -35,8 +36,6 @@ func init() {
 		fmt.Println("Error initializing Spaces client:", err)
 		os.Exit(1)
 	}
-
-	bucketName = "desk-thing"
 }
 
 func main() {
